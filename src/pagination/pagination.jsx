@@ -129,11 +129,11 @@ class Pagination extends Component {
          * 设置页码按钮的跳转链接，它的值为一个包含 {page} 的模版字符串，如：https://www.taobao.com/{page}
          */
         link: PropTypes.string,
-        selectPopupContiner: PropTypes.any,
         /**
          * 弹层组件属性，透传给Popup
          */
         popupProps: PropTypes.object,
+        selectProps: PropTypes.object,
     };
 
     static defaultProps = {
@@ -157,7 +157,6 @@ class Pagination extends Component {
         hideOnlyOnePage: false,
         showJump: true,
         pageNumberRender: index => index,
-        selectPopupContiner: node => node.parentNode,
     };
 
     constructor(props, context) {
@@ -478,20 +477,20 @@ class Pagination extends Component {
     }
 
     renderPageSizeDropdown() {
-        const { prefix, size, pageSizeList, selectPopupContiner, locale, popupProps } = this.props;
+        const { prefix, size, pageSizeList, locale, popupProps, selectProps } = this.props;
         const { currentPageSize } = this.state;
 
         return (
             <Select
                 className={`${prefix}pagination-size-selector-dropdown`}
                 popupClassName={`${prefix}pagination-size-selector-popup`}
-                popupContainer={selectPopupContiner}
                 popupProps={popupProps}
                 aria-label={locale.selectAriaLabel}
-                autoWidth
+                autoWidth={false}
                 size={size}
                 value={currentPageSize}
                 onChange={this.onSelectSize.bind(this)}
+                {...selectProps}
             >
                 {pageSizeList.map((item, index) => {
                     let label;
@@ -542,8 +541,8 @@ class Pagination extends Component {
             pageNumberRender,
             link,
             onChange,
-            selectPopupContiner,
             popupProps,
+            selectProps,
             ...others
         } = this.props;
         /* eslint-enable */

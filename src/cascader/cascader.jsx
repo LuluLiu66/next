@@ -289,7 +289,7 @@ class Cascader extends Component {
 
         const menusWidth = Math.ceil(
             menus.reduce((ret, menu) => {
-                return ret + getStyle(menu, 'width');
+                return ret + Math.ceil(menu.getBoundingClientRect().width);
             }, 0)
         );
 
@@ -751,6 +751,8 @@ class Cascader extends Component {
         const { focusedValue } = this.state;
         return (
             <Menu
+                // 如果不设置为false， CascaderSelect 开启 showSearch后，弹窗展开时，光标无法到input上去，也无法输入
+                focusable={false}
                 focusedKey={focusedValue}
                 onItemFocus={this.handleFocus}
                 className={`${prefix}cascader-filtered-list`}
