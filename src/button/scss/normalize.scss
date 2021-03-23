@@ -12,4 +12,40 @@
     &:hover {
         outline: 0;
     }
+
+    &[next-btn-click-animating-without-extra-node="true"] {
+        position: relative;
+    }
+
+    &[next-btn-click-animating-without-extra-node="true"]::after {
+        visibility: visible !important;
+        position: absolute;
+        top: calc(-1 * var(--next-wave-border-width));
+        right: 0;
+        bottom: 0;
+        left: calc(-1 * var(--next-wave-border-width));
+        width: calc(100% + 2 * var(--next-wave-border-width));
+        height: calc(100% + 2 * var(--next-wave-border-width));
+        display: block;
+        border-radius: inherit;
+        box-shadow: 0 0 0 0 var(--next-wave-shadow-color);
+        opacity: .32;
+        animation: fadeEffect 800ms cubic-bezier(.4, .0, .2, 1), waveEffect 400ms cubic-bezier(.4, .0, .2, 1);
+        animation-fill-mode: forwards, forwards;
+        content: '';
+        pointer-events: none;
+    }
+}
+
+
+@keyframes waveEffect {
+    100% {
+        box-shadow: 0 0 0 var(--next-wave-shadow-spread) var(--next-wave-shadow-color);
+    }
+}
+
+@keyframes fadeEffect {
+    100% {
+        opacity: 0;
+    }
 }

@@ -116,10 +116,6 @@
                     $btn-normal-solid-border-color-hover,
                     $btn-normal-solid-border-color-active,
                 );
-                &.active,
-                &:active {
-                    box-shadow: $btn-normal-solid-box-shadow-active;
-                }
             }
             &#{$btn-prefix}-outline {
                 border-style: $btn-normal-outline-border-style;
@@ -134,10 +130,6 @@
                     $btn-normal-outline-border-color-hover,
                     $btn-normal-outline-border-color-active,
                 );
-                &.active,
-                &:active {
-                    box-shadow: $btn-normal-outline-box-shadow-active;
-                }
             }
             &#{$btn-prefix}-text {
                 border-style: $btn-normal-text-border-style;
@@ -152,10 +144,6 @@
                     $btn-normal-text-border-color-hover,
                     $btn-normal-text-border-color-active,
                 );
-                &.active,
-                &:active {
-                    box-shadow: $btn-normal-text-box-shadow-active;
-                }
             }
         }
 
@@ -173,10 +161,6 @@
                     $btn-primary-solid-border-color-hover,
                     $btn-primary-solid-border-color-active,
                 );
-                &.active,
-                &:active {
-                    box-shadow: $btn-primary-solid-box-shadow-active;
-                }
             }
             &#{$btn-prefix}-outline {
                 border-style: $btn-primary-outline-border-style;
@@ -191,10 +175,6 @@
                     $btn-primary-outline-border-color-hover,
                     $btn-primary-outline-border-color-active,
                 );
-                &.active,
-                &:active {
-                    box-shadow: $btn-primary-outline-box-shadow-active;
-                }
             }
             &#{$btn-prefix}-text {
                 border-style: $btn-primary-text-border-style;
@@ -230,10 +210,6 @@
                     $btn-warning-solid-border-color-hover,
                     $btn-warning-solid-border-color-active,
                 );
-                &.active,
-                &:active {
-                    box-shadow: $btn-warning-solid-box-shadow-active;
-                }
             }
             &#{$btn-prefix}-outline {
                 border-style: $btn-warning-outline-border-style;
@@ -248,10 +224,6 @@
                     $btn-warning-outline-border-color-hover,
                     $btn-warning-outline-border-color-active,
                 );
-                &.active,
-                &:active {
-                    box-shadow: $btn-warning-outline-box-shadow-active;
-                }
             }
             &#{$btn-prefix}-text {
                 border-style: $btn-warning-text-border-style;
@@ -266,10 +238,6 @@
                     $btn-warning-text-border-color-hover,
                     $btn-warning-text-border-color-active,
                 );
-                &.active,
-                &:active {
-                    box-shadow: $btn-warning-text-box-shadow-active;
-                }
             }
         }
 
@@ -287,10 +255,6 @@
                     $btn-inverse-solid-border-color-active,
                     $btn-inverse-solid-border-color-active,
                 );
-                &.active,
-                &:active {
-                    box-shadow: $btn-inverse-solid-box-shadow-active;
-                }
             }
             &#{$btn-prefix}-outline {
                 border-style: $btn-inverse-outline-border-style;
@@ -305,10 +269,6 @@
                     $btn-inverse-outline-border-color-hover,
                     $btn-inverse-outline-border-color-active,
                 );
-                &.active,
-                &:active {
-                    box-shadow: $btn-inverse-outline-box-shadow-active;
-                }
             }
             &#{$btn-prefix}-text {
                 border-style: $btn-inverse-text-border-style;
@@ -323,10 +283,6 @@
                     $btn-inverse-text-border-color-hover,
                     $btn-inverse-text-border-color-active,
                 );
-                &.active,
-                &:active {
-                    box-shadow: $btn-inverse-text-box-shadow-active;
-                }
             }
         }
 
@@ -343,10 +299,6 @@
                     $color-transparent,
                     $color-transparent,
                 );
-                &.active,
-                &:active {
-                    box-shadow: none;
-                }
             }
         }
 
@@ -360,12 +312,18 @@
                 &[disabled] {
                     @include button-color( $btn-ghost-dark-color-disabled, $btn-ghost-dark-color-disabled, $btn-ghost-dark-color-disabled, $btn-ghost-dark-bg-disabled, $btn-ghost-dark-bg-disabled, $btn-ghost-dark-bg-disabled, $btn-ghost-dark-border-color-disabled, $btn-ghost-dark-border-color-disabled, $btn-ghost-dark-border-color-disabled);
                 }
+                &#{$btn-prefix}-text {
+                    border-color: $color-transparent;
+                }
             }
             &#{$btn-prefix}-light {
                 @include button-color( $btn-ghost-light-color, $btn-ghost-light-color-hover, $btn-ghost-light-color-hover, $btn-ghost-light-bg-normal, $btn-ghost-light-bg-hover, $btn-ghost-light-bg-hover, $btn-ghost-light-border-color, $btn-ghost-light-border-color-hover, $btn-ghost-light-border-color-hover);
                 &.disabled,
                 &[disabled] {
                     @include button-color( $btn-ghost-light-color-disabled, $btn-ghost-light-color-disabled, $btn-ghost-light-color-disabled, $btn-ghost-light-bg-disabled, $btn-ghost-light-bg-disabled, $btn-ghost-light-bg-disabled, $btn-ghost-light-border-color-disabled, $btn-ghost-light-border-color-disabled, $btn-ghost-light-border-color-disabled);
+                }
+                &#{$btn-prefix}-text {
+                    border-color: $color-transparent;
                 }
             }
         }

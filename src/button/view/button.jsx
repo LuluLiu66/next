@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ConfigProvider from '../../config-provider';
 import { obj, log } from '../../util';
+import Wave from './wave';
 
 function mapIconSize(size) {
     return {
@@ -112,8 +113,6 @@ export default class Button extends Component {
             size,
             htmlType,
             loading,
-            text,
-            warning,
             ghost,
             component,
             iconSize,
@@ -207,10 +206,17 @@ export default class Button extends Component {
         }
 
         return (
-            <TagName {...tagAttrs} dir={rtl ? 'rtl' : undefined} onMouseUp={this.onMouseUp} ref={this.buttonRefHandler}>
-                {loadingIcon}
-                {clonedChildren}
-            </TagName>
+            <Wave>
+                <TagName
+                    {...tagAttrs}
+                    dir={rtl ? 'rtl' : undefined}
+                    onMouseUp={this.onMouseUp}
+                    ref={this.buttonRefHandler}
+                >
+                    {loadingIcon}
+                    {clonedChildren}
+                </TagName>
+            </Wave>
         );
     }
 }
